@@ -1,0 +1,250 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<!-- <link rel='stylesheet' type='text/css' href='../resources/user/css/datePicker.css'/> -->
+<link rel='stylesheet' type='text/css' href='../resources/user/css/jQueryTable.css'/>
+<script src="<c:url value="/resources/user/js/datePicker.js"/>" type="text/javascript"></script> 
+<!-- <script src="../resources/user/js/jQueryTable.js"></script> -->
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ --><script src="<c:url value="/resources/user/js/dataTables.min.js"/>" type="text/javascript"></script>
+<link rel="stylesheet" href="<c:url value="/resources/user/css/dataTables.min.css"/>"  type="text/css" > 
+
+
+<link rel="stylesheet" href="<c:url value="/resources/user/css/datatable/buttons.jqueryui.css"/>"  type="text/css" ></link>
+<link rel="stylesheet" href="<c:url value="/resources/user/css/datatable/buttons.jqueryui.min.css"/>"  type="text/css" ></link>
+<link rel="stylesheet" href="<c:url value="/resources/user/css/datatable/buttons.dataTables.min.css"/>"  type="text/css" ></link>
+
+<link rel="stylesheet" href="<c:url value="/resources/user/css/dataTables.min.css"/>"  type="text/css" ></link> 
+
+
+<script src="<c:url value="/resources/user/js/jquery.dialogextend.js"/>" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+
+<script type = "text/javascript" >
+
+		$(document).ready(
+		function() {
+				
+				$("#fromDate").datepicker();
+			    $("#toDate").datepicker();
+			    /* $('#table_id').DataTable(); */
+			   
+			    });
+	 
+
+</script>
+
+
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Automatic Serial Number Row */
+.css-serial {
+ counter-reset: serial-number; /* Set the serial number counter to 0 */
+}
+.css-serial td:first-child:before {
+ counter-increment: serial-number; /* Increment the serial number counter */
+ content: counter(serial-number); /* Display the counter */
+}
+th {
+    background-color: rgb(48,48,48);
+    color: white;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+
+
+
+<style>
+table {
+    width:60%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: center;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th	{
+    background-color: #ef7858;
+    color: white;
+}
+</style>
+
+<script>
+
+
+
+
+
+	function cvoDetail()
+	{
+		var fromDate = document.getElementById("fromDate").value;
+		var toDate = document.getElementById("toDate").value;
+		
+		if(fromDate == "" || toDate == "")
+		{alert("Dates cannot be empty");}
+		else if(toDate==fromDate)
+		{alert("Both dates cannot be same");}
+		else if(toDate<fromDate)
+		{alert("From date must be before to date");}
+		else if(toDate>fromDate)
+		{
+		
+			$.ajax({
+				type : "POST",
+				url : "<c:url value='/user/getCvoDetail'/>",
+				data : {
+					"fromDate" : fromDate,
+					"toDate" : toDate
+				},
+				success : function(data) {
+					var table=$("#cvoDetail").dataTable(
+							{
+
+								"sPaginationType" : "full_numbers",
+								"bProcessing" : false,
+								"bServerSide" : false,
+								"destroy" : true,
+								/* "bRetrieve" : false,	 */			
+								"bAutoWidth" : false,		
+									
+								"aaData" : data,
+								
+								"aoColumns" : [ {
+
+									"sTitle" : "Organisation",
+									"mData" : "organizationName",
+									"className" : "dt-left",
+									
+								},{
+
+									"sTitle" : "CVO Name",
+									"mData" : "senderName",
+									"className" : "dt-left",
+
+								},{
+
+									"sTitle" : "UserId",
+									"mData" : "complainNo",
+									"className" : "dt-left",
+
+								},{
+									"sTitle" : "email",
+									"mData" : "ir",
+									"className" : "dt-left",
+								},  {
+									"sTitle" : "mobilenumber",
+									"mData" : "mobileNo",
+									"className" : "dt-left",
+
+								}								],
+								dom : 'lBfrtip',
+
+								buttons : [
+										{
+											extend : 'print',
+											text : 'Print',
+											title : "CVO Report",
+
+										}
+
+								]
+
+							});
+					
+				console.log("SUCCESS: ", data);
+				},
+
+				error : function(e) {
+					console.log("ERROR: ", e);
+					display(e);
+				},
+				done : function(e) {
+					console.log("DONE");
+				}
+			});
+	}
+}
+	
+</script>
+
+<body id="page2">
+	 <div name="myform" id="myform" action=""> 
+
+		<!--==============================content================================-->
+		<section id="content">
+			<div class="form-group">
+
+		<center>			
+
+						<hr style='background-color: red; border-width: 0; color: #000000; height: 2px; line-height: 0; text-align: left; width: 100%;' />
+						<br/>
+						
+
+
+
+		<div id="result" style=" color: red; font: bold; ">
+ 				
+ 				</div>
+
+			<h3 style="color:black; " align="center" >CVO: Details Updation</h3>
+			<br/>
+						<div >
+							From Date<input name="fDate" placeholder="yyyy-mm-dd" id="fromDate" size="20" >
+							&nbsp;&nbsp;&nbsp;
+							To Date<input name="tDate" placeholder="yyyy-mm-dd"  id="toDate" size="20" 
+								> &nbsp;&nbsp;&nbsp;
+							<label>
+								<button type="button" class="button-2" id="com_srch"
+									onclick="cvoDetail()">Search</button>
+							</label>
+
+
+						</div>
+						<br>
+						<br>
+
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+	<table id="cvoDetail" class ="display" style="width: 100%"  >
+	</table>	
+</div>
+
+
+
+		</section>
+
+	
+</body>
+
+

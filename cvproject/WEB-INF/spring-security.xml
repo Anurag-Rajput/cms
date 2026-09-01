@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/security
+          http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+
+	<security:http pattern="/resources/**" security="none" />
+	<security:http pattern="/resources/user/**" security="none" />
+	<security:http pattern="/**" auto-config="true"
+		use-expressions="true" >
+		<security:intercept-url pattern="/user/dairy/*"
+			access="hasRole('ROLE_Diary')" />
+		<security:intercept-url pattern="/user/dh/*"
+			access="hasRole('ROLE_DH')" />
+		<security:intercept-url pattern="/user/so/*"
+			access="hasRole('ROLE_SO')" />
+		<security:intercept-url pattern="/user/bo/*"
+			access="hasRole('ROLE_BO')" />
+		<security:intercept-url pattern="/user/cvofficer/*"
+			access="hasRole('ROLE_CVO')" />
+		 <security:intercept-url pattern="/user/help/*"
+		  access="hasRole('ROLE_HELP')" /> 
+		<security:intercept-url pattern="/user/public/*"
+			access="hasRole('ROLE_CITIZEN')" />
+		<security:intercept-url pattern="/user/clr/*"
+			access="hasRole('ROLE_CLR')" />
+ 		<security:intercept-url pattern="/user/admin/transfer" 
+		 	access="hasRole('ROLE_ADMIN')" /> 
+	 	<security:intercept-url pattern="/register/*" 
+		 	access="hasRole('ROLE_ADMIN')" /> 
+	 	<security:intercept-url pattern="/admin/*" 
+	 		access="hasRole('ROLE_ADMIN')" /> 
+ 		<security:intercept-url pattern="user/firstProfile" 
+ 		access="hasAnyRole('ROLE_ADMIN','ROLE_CVO')" /> 
+		<security:form-login login-processing-url="/user/j_spring_security_check"
+			login-page="/" authentication-success-handler-ref="AuthenticationSuccessHandler"
+			username-parameter="j_username" password-parameter="j_password" 
+			authentication-failure-handler-ref="AuthenticationFailureHandler" />
+
+		<security:headers>
+			<security:frame-options policy="SAMEORIGIN" />
+		</security:headers>
+
+			<security:session-management><security:concurrency-control expired-url="/"/></security:session-management>
+			<security:csrf  request-matcher-ref="csrfSecurityMatcher"  />
+
+		<security:logout logout-success-url="/"
+			delete-cookies="JSESSIONID" invalidate-session="true"
+			logout-url="/user/j_spring_security_logout" />
+		<security:access-denied-handler
+			error-page="/error" />
+		<security:session-management
+			invalid-session-url="/" />
+	</security:http>
+
+	<bean id="csrfSecurityMatcher"
+		class="com.cvc.security.CsrfSecurityRequestMatcher" />
+
+	<bean id="AuthenticationSuccessHandler"
+		class="com.cvc.security.MySimpleUrlAuthenticationSuccessHandler" />
+
+	<bean id="AuthenticationFailureHandler"
+		class="com.cvc.security.MySimpleUrlAuthenticationFailureHandler" />
+
+	<bean id="accessDecisionManager"
+		class="org.springframework.security.access.vote.AffirmativeBased">
+		<constructor-arg>
+			<list>
+				<bean
+					class="org.springframework.security.web.access.expression.WebExpressionVoter" />
+				<bean class="org.springframework.security.access.vote.RoleVoter">
+					<property name="rolePrefix" value="ROLE_" />
+					<!-- Above is the default behaviour. Mentioning just in case if someone 
+						wants to have different prefix or no prefix at all. This is specially useful 
+						when you want to validate against privileges instead of roles.(i.e. You have 
+						dynamically defined roles against a set of pre-defined privileges.) -->
+				</bean>
+				<bean class="org.springframework.security.access.vote.AuthenticatedVoter" />
+			</list>
+		</constructor-arg>
+	</bean>
+	<security:authentication-manager>
+		<security:authentication-provider
+			ref="daoAuthenticationProvider" />
+	</security:authentication-manager>
+	<bean id="accessDeniedHandler"
+		class="org.springframework.security.web.access.AccessDeniedHandlerImpl">
+		<property name="errorPage" value="/error" />
+	</bean>
+	<bean id="daoAuthenticationProvider"
+		class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<property name="userDetailsService" ref="customUserDetailsService" />
+		<property name="passwordEncoder" ref="encoder" />
+		<!-- Enable the following if you are using a salt with the password encoding -->
+		<!-- <property name="saltSource" ref="saltSource"/> -->
+	</bean>
+	<bean id="encoder"
+		class="com.cvc.security.PasswordCheck">
+		<!-- <constructor-arg name="strength" value="60" /> -->
+	</bean>
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.nic.in" />
+		<property name="port" value="465" />
+		<property name="username" value="portal-cvc" />
+		<property name="password" value="Av#ZD9s4H" />
+ 
+		<!-- The name of the property, following JavaBean naming conventions -->
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtp.ssl.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+				<prop key="mail.debug">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="passwordEncoder"
+		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder">
+	</bean>
+	
+</beans>

@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="base" template="/WEB-INF/views/common/templete.jsp">
+		<put-attribute name="title" value="CVProject" />
+		<put-attribute name="body" value="/WEB-INF/views/user/login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	<definition name="baseBranchOfficer" template="/WEB-INF/views/common/templeteBo.jsp">
+		<put-attribute name="title" value="CVProject" />
+		<put-attribute name="body" value="/WEB-INF/views/user/login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+		<put-attribute name="headerBo" value="/WEB-INF/views/common/headerBo.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+<definition name="baseCLR" template="/WEB-INF/views/common/templeteBo.jsp">
+		<put-attribute name="title" value="CVProject" />
+		<put-attribute name="body" value="/WEB-INF/views/user/login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+		<put-attribute name="headerBo" value="/WEB-INF/views/common/headerCLR.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+
+	<definition name="baseOne" template="/WEB-INF/views/common/templeteOne.jsp">
+		<put-attribute name="title" value="CVProject" />
+		<put-attribute name="body" value="/WEB-INF/views/user/login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+		<put-attribute name="headerOne"
+			value="/WEB-INF/views/common/headerOne.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+
+	<definition name="baseOneCpaComplain" template="/WEB-INF/views/common/templeteOneCpaComplain.jsp">
+		<put-attribute name="title" value="CVProject" />
+		<put-attribute name="body" value="/WEB-INF/views/user/login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+		<put-attribute name="headerOneCpaComplain" value="/WEB-INF/views/common/headerOneCpaComplain.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	 <definition name="baseCoord" template="/WEB-INF/views/common/templeteCoordination.jsp">
+		<put-attribute name="title" value="CVProject" />
+		<put-attribute name="body" value="/WEB-INF/views/user/login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+		<put-attribute name="headerCoordination" value="/WEB-INF/views/common/headerCoordination.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+	
+	<definition name="baseAdmin" template="/WEB-INF/views/common/templeteAdmin.jsp">
+		<put-attribute name="title" value="CVProject" />
+		<put-attribute name="body" value="/WEB-INF/views/user/login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+		<put-attribute name="headerCoordination" value="/WEB-INF/views/common/headerAdmin.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	<definition name="baseOneClearance" template="/WEB-INF/views/common/templeteOneClearance.jsp">
+		<put-attribute name="title" value="CVProject" />
+		<put-attribute name="body" value="/WEB-INF/views/user/login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+		<put-attribute name="headerOneClearance" value="/WEB-INF/views/common/headerOneClearance.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+
+
+
+	<definition name="baseTwo" template="/WEB-INF/views/common/templeteTwo.jsp">
+		<put-attribute name="title" value="CVProject" />
+		<put-attribute name="body" value="/WEB-INF/views/user/login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+		<put-attribute name="headerTwo"
+			value="/WEB-INF/views/common/headerTwo.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	<definition name="baseThree" template="/WEB-INF/views/common/templeteThree.jsp">
+		<put-attribute name="title" value="CVProject" />
+		<put-attribute name="body" value="/WEB-INF/views/user/login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+		<put-attribute name="headerThree"
+			value="/WEB-INF/views/common/headerThree.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	<definition name="baseHelp" template="/WEB-INF/views/common/templeteHelp.jsp">
+		<put-attribute name="title" value="CVProject" />
+		<put-attribute name="body" value="/WEB-INF/views/user/login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+		<put-attribute name="headerHelp"
+			value="/WEB-INF/views/common/headerHelp.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+ <definition name="baseCVC" template="/WEB-INF/views/common/templeteCVC.jsp">
+		<put-attribute name="title" value="CVProject" />
+		<put-attribute name="body" value="/WEB-INF/views/user/login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+		<put-attribute name="headerCVC" value="/WEB-INF/views/common/headerCVC.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	<definition name="helpLineIndex" extends="baseHelp">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/helpLineIndex.jsp" />
+		<put-attribute name="current" value="helpLineIndex" />
+	</definition>
+
+
+	<definition name="helpLine" extends="baseHelp">
+		<put-attribute name="body" value="/WEB-INF/views/user/helpLine.jsp" />
+		<put-attribute name="current" value="helpLine" />
+	</definition>
+
+
+	<definition name="helpLineSearch" extends="baseHelp">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/helpLineSearch.jsp" />
+		<put-attribute name="current" value="helpLineSearch" />
+	</definition>
+
+
+	<definition name="Final" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/user/Final.jsp" />
+		<put-attribute name="current" value="Final" />
+	</definition>
+
+	<definition name="dairySearch" extends="base">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/dairySearch.jsp" />
+		<put-attribute name="current" value="dairySearch" />
+	</definition>
+	
+	
+	<definition name="rti" extends="base">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/rti.jsp" />
+		<put-attribute name="current" value="rti" />
+	</definition>
+
+	<definition name="dairyChangePassword" extends="base">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/dairyChangePassword.jsp" />
+		<put-attribute name="current" value="dairyChangePassword" />
+	</definition>
+
+	<definition name="dairyPwdSuccess" extends="base">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/dairyPwdSuccess.jsp" />
+		<put-attribute name="current" value="dairyPwdSuccess" />
+	</definition>
+
+	<definition name="outbox" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/user/outbox.jsp" />
+		<put-attribute name="current" value="outbox" />
+	</definition>
+
+	<definition name="officerOutbox" extends="baseOne">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/officerOutbox.jsp" />
+		<put-attribute name="current" value="officerOutbox" />
+	</definition>
+
+	<definition name="monthlyReport" extends="baseOne">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/monthlyReport.jsp" />
+		<put-attribute name="current" value="monthlyReport" />
+	</definition>
+	
+		<definition name="InterimIR" extends="baseOne">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/InterimIR.jsp" />
+		<put-attribute name="current" value="InterimIR" />
+	</definition>
+	
+	
+	<definition name="ComplainTypeReport" extends="baseOne">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/ComplainTypeReport.jsp" />
+		<put-attribute name="current" value="ComplainTypeReport" />
+	</definition>
+	<definition name="rtiDh" extends="baseOne">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/rtiDh.jsp" />
+		<put-attribute name="current" value="rtiDh" />
+	</definition>
+	
+	<definition name="boDisposalReport" extends="baseOne">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/boDisposalReport.jsp" />
+		<put-attribute name="current" value="boDisposalReport" />
+	</definition>
+
+	<definition name="sentMail" extends="baseOne">
+		<put-attribute name="body" value="/WEB-INF/views/user/sentMail.jsp" />
+		<put-attribute name="current" value="sentMail" />
+	</definition>
+	
+	
+	<definition name="sentMailBo" extends="baseBranchOfficer">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/sentMailBo.jsp" />
+		<put-attribute name="current" value="sentMailBo" />
+	</definition>
+	
+	<definition name="rtiBo" extends="baseBranchOfficer">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/rtiBo.jsp" />
+		<put-attribute name="current" value="rtiBo" />
+	</definition>
+	
+	<definition name="reportBo" extends="baseBranchOfficer">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/reportBo.jsp" />
+		<put-attribute name="current" value="reportBo" />
+	</definition>
+	
+	<definition name="monthlyReportBo" extends="baseBranchOfficer">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/monthlyReportBo.jsp" />
+		<put-attribute name="current" value="monthlyReportBo" />
+	</definition>
+	
+	<definition name="inboxBo" extends="baseBranchOfficer">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/inboxBo.jsp" />
+		<put-attribute name="current" value="inboxBo" />
+	</definition>
+	
+	<definition name="searchBo" extends="baseBranchOfficer">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/searchBo.jsp" />
+		<put-attribute name="current" value="searchBo" />
+	</definition>
+	
+	<definition name="resetPasswordBo" extends="baseBranchOfficer">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/resetPasswordBo.jsp" />
+		<put-attribute name="current" value="resetPasswordBo" />
+	</definition>
+	
+	<definition name="pwdSuccessBo" extends="baseBranchOfficer">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/pwdSuccessBo.jsp" />
+		<put-attribute name="current" value="pwdSuccessBo" />
+	</definition>
+	
+	<definition name="officerOutboxBo" extends="baseBranchOfficer">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/officerOutboxBo.jsp" />
+		<put-attribute name="current" value="officerOutboxBo" />
+	</definition>
+	
+	<definition name="cvoReportToBo" extends="baseBranchOfficer">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/cvoReportToBo.jsp" />
+		<put-attribute name="current" value="cvoReportToBo" />
+	</definition>
+	
+	
+
+	<definition name="sentMailCvo" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/sentMailCvo.jsp" />
+		<put-attribute name="current" value="sentMailCvo" />
+	</definition>
+
+	<definition name="reportSubmited" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/reportSubmited.jsp" />
+		<put-attribute name="current" value="reportSubmited" />
+	</definition>
+
+	<definition name="report" extends="baseOne">
+		<put-attribute name="body" value="/WEB-INF/views/user/report.jsp" />
+		<put-attribute name="current" value="report" />
+	</definition>
+
+	<definition name="updateDiaryDetails" extends="base">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/updateDiaryDetails.jsp" />
+		<put-attribute name="current" value="updateDiaryDetails" />
+	</definition>
+
+	<definition name="updateComplainDetails" extends="baseOne">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/updateComplainDetails.jsp" />
+		<put-attribute name="current" value="updateComplainDetails" />
+	</definition>
+
+	<definition name="resetPassword" extends="baseOne">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/resetPassword.jsp" />
+		<put-attribute name="current" value="resetPassword" />
+	</definition>
+
+	<definition name="resetPasswordCvo" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/resetPasswordCvo.jsp" />
+		<put-attribute name="current" value="resetPasswordCvo" />
+	</definition>
+
+	<definition name="pwdSuccess" extends="baseOne">
+		<put-attribute name="body" value="/WEB-INF/views/user/pwdSuccess.jsp" />
+		<put-attribute name="current" value="pwdSuccess" />
+	</definition>
+
+	<definition name="pwdSuccessCvo" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/pwdSuccessCvo.jsp" />
+		<put-attribute name="current" value="pwdSuccessCvo" />
+	</definition>
+
+	<definition name="cvoMonthlyReport" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/cvoMonthlyReport.jsp" />
+		<put-attribute name="current" value="cvoMonthlyReport" />
+	</definition>
+
+	<definition name="search" extends="baseOne">
+		<put-attribute name="body" value="/WEB-INF/views/user/search.jsp" />
+		<put-attribute name="current" value="search" />
+	</definition>
+
+
+
+	<definition name="searchCpaComplain" extends="baseOneCpaComplain">
+		<put-attribute name="body" value="/WEB-INF/views/user/searchCpaComplain.jsp" />
+		<put-attribute name="current" value="searchCpaComplain" />
+	</definition>
+<!-- 
+	<definition name="searchCpaComplain" extends="baseOneCpaComplain">
+		<put-attribute name="body" value="/WEB-INF/views/user/searchCpaComplain.jsp" />
+		<put-attribute name="current" value="searchCpaComplain" />
+	</definition> -->
+
+	<definition name="rtiCPA" extends="baseOneCpaComplain">
+		<put-attribute name="body" value="/WEB-INF/views/user/rtiCPA.jsp" />
+		<put-attribute name="current" value="rtiCPA" />
+	</definition>
+	
+	<definition name="updateAddClearance" extends="baseOneClearance">
+		<put-attribute name="body" value="/WEB-INF/views/user/updateAddClearance.jsp" />
+		<put-attribute name="current" value="updateAddClearance" />
+	</definition>
+
+
+	<definition name="cvoHome" extends="baseThree">
+		<put-attribute name="body" value="/WEB-INF/views/user/cvoHome.jsp" />
+		<put-attribute name="current" value="cvoHome" />
+	</definition>
+
+	<definition name="cvoNaAllComplaint" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/cvoNaAllComplaint.jsp" />
+		<put-attribute name="current" value="cvoNaAllComplaint" />
+	</definition>
+
+	<definition name="cvoNaReadComplaint" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/cvoNaReadComplaint.jsp" />
+		<put-attribute name="current" value="cvoNaReadComplaint" />
+	</definition>
+
+	<definition name="cvoNaUnReadComplaint" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/cvoNaUnReadComplaint.jsp" />
+		<put-attribute name="current" value="cvoNaUnReadComplaint" />
+	</definition>
+
+
+	<definition name="cvoComplaintView" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/cvoComplaintView.jsp" />
+		<put-attribute name="current" value="cvoComplaintView" />
+	</definition>
+
+	<definition name="inbox" extends="baseOne">
+		<put-attribute name="body" value="/WEB-INF/views/user/inbox.jsp" />
+		<put-attribute name="current" value="inbox" />
+	</definition>
+	
+	<definition name="coordmenu" extends="baseCoord">
+		<put-attribute name="body" value="/WEB-INF/views/user/Coordination.jsp" />
+		<put-attribute name="current" value="coordmenu" />
+	</definition>
+
+	<definition name="Admin" extends="baseAdmin">
+		<put-attribute name="body" value="/WEB-INF/views/user/Admin.jsp" />
+		<put-attribute name="current" value="Admin" />
+	</definition>
+	
+	<definition name="cvoDetail" extends="baseCoord">
+		<put-attribute name="body" value="/WEB-INF/views/user/cvoDetail.jsp" />
+		<put-attribute name="current" value="cvoDetail" />
+	</definition>
+
+	
+	<definition name="cvoActivity" extends="baseCoord">
+		<put-attribute name="body" value="/WEB-INF/views/user/cvoActivity.jsp" />
+		<put-attribute name="current" value="cvoActivity" />
+	</definition>
+
+	<definition name="pendingComplain" extends="baseOne">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/pendingComplain.jsp" />
+		<put-attribute name="current" value="pendingComplain" />
+	</definition>
+
+	<definition name="citizenHome" extends="baseTwo">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/citizenHome.jsp" />
+		<put-attribute name="current" value="citizenHome" />
+	</definition>
+
+
+	<definition name="citizencomp" extends="baseTwo">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/citizencomp.jsp" />
+		<put-attribute name="current" value="citizencomp" />
+	</definition>
+
+	<definition name="citizenMycomplaint" extends="baseTwo">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/citizenMycomplaint.jsp" />
+		<put-attribute name="current" value="citizenMycomplaint" />
+	</definition>
+
+	<definition name="citizenPasswordChange" extends="baseTwo">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/citizenPasswordChange.jsp" />
+		<put-attribute name="current" value="citizenPasswordChange" />
+	</definition>
+
+	<definition name="citizenPwdSuccess" extends="baseTwo">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/citizenPwdSuccess.jsp" />
+		<put-attribute name="current" value="citizenPwdSuccess" />
+	</definition>
+
+	 <definition name="citizenProfile" extends="baseTwo">
+		<put-attribute name="body"
+		value="/WEB-INF/views/user/updateCitizenProfile.jsp" />
+		<put-attribute name="current" value="citizenProfile" />
+	</definition>
+	
+	<definition name="firstStage" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/firstStage.jsp" />
+		<put-attribute name="current" value="firstStage" />
+	</definition>
+	
+		<definition name="secondStage" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/secondStage.jsp" />
+		<put-attribute name="current" value="secondStage" />
+	</definition>
+	
+		<definition name="complaintPending" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/complaintPending.jsp" />
+		<put-attribute name="current" value="complaintPending" />
+	</definition>
+	
+		<definition name="furtherClarification" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/furtherClarification.jsp" />
+		<put-attribute name="current" value="furtherClarification" />
+	</definition>
+	
+		<definition name="departmentalInquiry" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/departmentalInquiry.jsp" />
+		<put-attribute name="current" value="departmentalInquiry" />
+	</definition>
+
+	<definition name="register" extends="baseAdmin">
+		<put-attribute name="body" value="/WEB-INF/views/user/register.jsp" />
+		<put-attribute name="current" value="register" />
+	</definition>
+	
+	<definition name="userRegS" extends="baseAdmin">
+		<put-attribute name="body" value="/WEB-INF/views/user/userRegS.jsp" />
+		<put-attribute name="current" value="userRegS" />
+	</definition>
+	
+	<definition name="updatePassword1" extends="baseAdmin">
+		<put-attribute name="body" value="/WEB-INF/views/user/updatePassword.jsp" />
+		<put-attribute name="current" value="updatePassword1" />
+	</definition>
+	
+	<definition name="cvoUpdateSuccess" extends="baseAdmin">
+		<put-attribute name="body" value="/WEB-INF/views/user/cvoUpdateSuccess.jsp" />
+		<put-attribute name="current" value="cvoUpdateSuccess" />
+	</definition>
+
+	<definition name="updateCredential" extends="baseAdmin">
+		<put-attribute name="body" value="/WEB-INF/views/user/updateCredential.jsp" />
+		<put-attribute name="current" value="updateCredential" />
+	</definition>
+	
+	<definition name="EmailSMSUI" extends="baseAdmin">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/emailSms.jsp" />
+		<put-attribute name="current" value="EmailSMSUI" />
+	</definition>
+	
+	<definition name="updatePassword" extends="baseThree">
+		<put-attribute name="body" value="/WEB-INF/views/user/updatePassword.jsp" />
+		<put-attribute name="current" value="updatePassword" />
+	</definition>
+	
+	<definition name="editProfile" extends="baseOne">
+		<put-attribute name="body" value="/WEB-INF/views/user/editProfile.jsp" />
+		<put-attribute name="current" value="editProfile" />
+	</definition>
+	
+	<definition name="editProfileBO" extends="baseBranchOfficer">
+		<put-attribute name="body" value="/WEB-INF/views/user/editProfile.jsp" />
+		<put-attribute name="current" value="editProfile" />
+	</definition>
+	
+	<definition name="editProfileSuccess" extends="baseOne">
+		<put-attribute name="body" value="/WEB-INF/views/user/editProfileSuccess.jsp" />
+		<put-attribute name="current" value="editProfileSuccess" />
+	</definition>
+	
+	<definition name="editProfileSuccessBO" extends="baseBranchOfficer">
+		<put-attribute name="body" value="/WEB-INF/views/user/editProfileSuccess.jsp" />
+		<put-attribute name="current" value="editProfileSuccessBO" />
+	</definition>
+	
+	<definition name="clearDecision" extends="baseAdmin">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/clearDecision.jsp" />
+		<put-attribute name="current" value="clearDecision" />
+	</definition>
+	
+	 <definition name="complaintUserPending" extends="baseCVC">
+		<put-attribute name="body" value="/WEB-INF/views/user/complaintUserPending.jsp" />
+		<put-attribute name="current" value="complaintUserPending" />
+	</definition>
+	
+		<definition name="coordmenuCVC" extends="baseCVC">
+		<put-attribute name="body" value="/WEB-INF/views/user/Coordination.jsp" />
+		<put-attribute name="current" value="coordmenuCVC" />
+	</definition>
+	
+	<definition name="clearanceMenu" extends="baseCLR">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/inboxBo.jsp" />
+		<put-attribute name="current" value="inboxCLR" />
+	</definition>
+	
+	<definition name="inboxCLR" extends="baseCLR">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/inboxBo.jsp" />
+		<put-attribute name="current" value="inboxCLR" />
+	</definition>
+	
+		<definition name="officerOutboxCLR" extends="baseCLR">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/officerOutboxBo.jsp" />
+		<put-attribute name="current" value="officerOutboxCLR" />
+	</definition>
+	
+		
+	<definition name="sentMailCLR" extends="baseCLR">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/sentMailBo.jsp" />
+		<put-attribute name="current" value="sentMailCLR" />
+	</definition>
+	
+	<definition name="searchCLR" extends="baseCLR">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/searchBo.jsp" />
+		<put-attribute name="current" value="searchCLR" />
+	</definition>
+	
+	<definition name="editProfileCLR" extends="baseCLR">
+		<put-attribute name="body" value="/WEB-INF/views/user/editProfile.jsp" />
+		<put-attribute name="current" value="editProfileCLR" />
+	</definition>
+	
+	<definition name="resetPasswordCLR" extends="baseCLR">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/resetPasswordBo.jsp" />
+		<put-attribute name="current" value="resetPasswordCLR" />
+	</definition>
+	
+	<definition name="summarySheet" extends="baseOne">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/summarySheet.jsp" />
+		<put-attribute name="current" value="summarySheet" />
+	</definition>
+	
+	<definition name="impinboxBo" extends="baseBranchOfficer">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/inboxBo.jsp" />
+		<put-attribute name="current" value="impinboxBo" />
+	</definition>
+	
+	<definition name="impinbox" extends="baseOne">
+		<put-attribute name="body" value="/WEB-INF/views/user/inbox.jsp" />
+		<put-attribute name="current" value="impinbox" />
+	</definition>
+	
+	<definition name="Elearning" >
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/ELearning.jsp" />
+		<put-attribute name="current" value="Elearning" />
+	</definition>
+	
+		<definition name="cvoNaClosedComplaint" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/cvoNaClosedComplaint.jsp" />
+		<put-attribute name="current" value="cvoNaClosedComplaint" />
+	</definition>
+	
+	
+	<definition name="complaintsQrc" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/complaintsQrc.jsp" />
+		<put-attribute name="current" value="complaintsQrc" />
+	</definition>
+	<definition name="vigilanceInvestigations" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/vigilanceInvestigations.jsp" />
+		<put-attribute name="current" value="vigilanceInvestigations" />
+	</definition>
+	<definition name="prosecutionSuspension" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/prosecutionSuspension.jsp" />
+		<put-attribute name="current" value="prosecutionSuspension" />
+	</definition>
+	<definition name="departmentalProceedings" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/departmentalProceedings.jsp" />
+		<put-attribute name="current" value="departmentalProceedings" />
+	</definition>
+	<definition name="adviceofCVC" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/adviceofCVC.jsp" />
+		<put-attribute name="current" value="adviceofCVC" />
+	</definition>
+	
+	<definition name="statusPendencyCase" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/statusPendencyCase.jsp" />
+		<put-attribute name="current" value="statusPendencyCase" />
+	</definition>
+	<definition name="punitiveVigilance" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/punitiveVigilance.jsp" />
+		<put-attribute name="current" value="punitiveVigilance" />
+	</definition>
+	<definition name="preventiveVigilance" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/preventiveVigilance.jsp" />
+		<put-attribute name="current" value="preventiveVigilance" />
+	</definition>
+	<definition name="preventiveVigilanceActivities" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/preventiveVigilanceActivities.jsp" />
+		<put-attribute name="current" value="preventiveVigilanceActivities" />
+	</definition>
+	<definition name="QPR" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/QPR.jsp" />
+		<put-attribute name="current" value="QPR" />
+	</definition>
+	
+		<definition name="finalSubmit" extends="baseThree">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/finalSubmit.jsp" />
+		<put-attribute name="current" value="finalSubmit" />
+	</definition>
+	<definition name="cvoComplaintCoordView" extends="baseCoord">
+		<put-attribute name="body" value="/WEB-INF/views/user/cvoComplaintView.jsp" />
+		<put-attribute name="current" value="cvoComplaintCoordView" />
+	</definition>
+<definition name="EndToEndTracking" extends="baseOne">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/EndToEndTracking.jsp" />
+		<put-attribute name="current" value="EndToEndTracking" />
+	</definition>
+</tiles-definitions>

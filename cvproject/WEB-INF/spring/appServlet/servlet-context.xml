@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
+		infrastructure -->
+
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+	<mvc:annotation-driven />
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/uploadDoc/**" location="file:///CVC/" />
+	<resources mapping="/circulars/**" location="file:/CVC/circulars/" />
+	<resources mapping="/uploadQPR/**" location="file:///" />
+	<resources location="file:/CVC/study/" mapping="/study/**"/>
+	<!-- <resources mapping="/study/**" location="file:///resources/E-Learning" /> -->
+	<context:component-scan base-package="com.cvc.user.controller" />
+	<context:component-scan base-package="com.cvc.dto" />
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
+		in the /WEB-INF/views directory -->
+
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/user/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+
+
+	<beans:bean
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer"
+		id="tilesConfigurer">
+		<beans:property name="definitions">
+			<beans:list>
+				<beans:value>/WEB-INF/tiles.xml</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
+	<beans:bean
+		class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+		<beans:property name="ignoreUnresolvablePlaceholders"
+			value="true" />
+		<beans:property name="locations">
+			<beans:list>
+				<beans:value>classpath:exception.properties</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
+	<beans:bean id="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<beans:property name="paramName" value="lang" />
+	</beans:bean>
+
+	<beans:bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+		<beans:property name="defaultLocale" value="en" />
+	</beans:bean>
+
+   <!-- Creates the JSR-303 Validator Message With .property File -->
+	 <beans:bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<beans:property name="basename" value="/WEB-INF/messages" />
+	</beans:bean> 
+
+
+
+	<beans:bean id="handlerMapping"
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+		<beans:property name="interceptors">
+			<beans:ref bean="localeChangeInterceptor" />
+		</beans:property>
+	</beans:bean>
+
+
+
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<beans:property name="maxUploadSize" value="25000000" />
+	</beans:bean>
+
+	<!-- Creates the JSR-303 Validator -->
+	<beans:bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+
+	<beans:bean id="cnManager"
+		class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+		<beans:property name="favorPathExtension" value="true" />
+		<beans:property name="ignoreAcceptHeader" value="true" />
+		<beans:property name="defaultContentType" value="text/html" />
+		<beans:property name="useJaf" value="false" />
+
+		<beans:property name="mediaTypes">
+			<beans:map>
+				<beans:entry key="html" value="text/html" />
+				<beans:entry key="json" value="application/json" />
+				<beans:entry key="xml" value="application/xml" />
+			</beans:map>
+		</beans:property>
+	</beans:bean>
+
+
+	<beans:bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<beans:property name="contentNegotiationManager" ref="cnManager" />
+		<beans:property name="viewResolvers">
+			<beans:list>
+				<beans:bean
+					class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+				<!-- Use tiles2 for views -->
+				<beans:bean
+					class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+					<beans:property name="viewClass"
+						value="org.springframework.web.servlet.view.tiles3.TilesView" />
+				</beans:bean>
+			</beans:list>
+		</beans:property>
+		<beans:property name="defaultViews">
+			<beans:list>
+				<beans:ref bean="jsonView" />
+
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
+
+	<beans:bean id="jsonView"
+		class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+		<beans:property name="contentType" value="application/json;charset=UTF-8" />
+		<beans:property name="disableCaching" value="false" />
+		<beans:property name="extractValueFromSingleKeyModel"
+			value="true" />
+	</beans:bean>
+	<!-- Configuring interceptors based on URI -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/user/*" />
+			<beans:bean class="com.cvc.security.CacheControlInterceptor"></beans:bean>
+		</interceptor>
+		<interceptor>
+			<mapping path="/user/*/*" />
+			<beans:bean class="com.cvc.security.CacheControlInterceptor"></beans:bean>
+		</interceptor>
+		<interceptor>
+			<mapping path="/register/*" />
+			<beans:bean class="com.cvc.security.CacheControlInterceptor"></beans:bean>
+		</interceptor>		
+	</interceptors>
+</beans:beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
