@@ -1,0 +1,148 @@
+body{
+font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+}
+p, h1, form, button{border:0; margin:0; padding:0;}
+.spacer{clear:both; height:1px;}
+.mainform{
+margin:0 auto;
+width:400px;
+padding:14px;
+}
+
+#container{
+border:solid 2px burlywood;
+background: silver;
+border-radius: 5px;
+}
+#container h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+#container p{
+font-size:11px;
+color:#666666;
+margin-bottom:20px;
+border-bottom:solid 1px burlywood;
+padding-bottom:10px;
+}
+#container label{
+display:block;
+font-weight:bold;
+text-align:right;
+width:140px;
+float:left;
+}
+#container .small{
+color:#666666;
+display:block;
+font-size:11px;
+font-weight:normal;
+text-align:right;
+width:140px;
+}
+#container input{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px burlywood;
+width:200px;
+margin:2px 0 20px 10px;
+border-radius: 5px;
+}
+#container button{
+clear:both;
+margin-left:150px;
+width:125px;
+height:31px;
+background:#666666;
+text-align:center;
+line-height:31px;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
+border-radius: 5px;
+}
+table, tr, td{
+overflow: hidden;
+border:thin; 
+}
+#login-box {
+	width:60vh;
+	height:75vh;
+	padding: 5vh 7vh 0 7vh;
+	color: white;
+	font: 2vh Arial, Helvetica, sans-serif;
+	margin-top: -10vh;
+	margin-left: -20vh;
+	background: url(../images/login-box-backg.jpg) no-repeat left top;
+}
+
+#login-box img {
+	border:none;
+}
+
+#login-box h2 {
+	padding:0;
+	margin:0;
+	color: #ebebeb;
+	font: bold 5vh "Calibri", Arial;
+}
+
+
+#login-box-name {
+	float: left;
+	display:inline;
+	width:10vh;
+	text-align: right;
+	padding: 2vh 1.5vh 0 0;
+	margin:0 0 1vh 0;
+}
+
+#login-box-field {
+	float: left;
+	display:inline;
+	width:30vh;
+	margin:0;
+	margin:0 0 1vh 0;
+}
+
+
+.form-login  {
+	width: 20vh;
+	padding: 2vh 1vh 1.2vh .8vh;
+	border: .5vh solid #0d2c52;
+	background-color:#8a8a8a;
+	font-size: 2vh;
+	color: #ebebeb;
+}
+
+
+.login-box-options  {
+	clear:both;
+	padding-left:20vh;
+	font-size: 2vh;
+}
+
+.login-box-options a {
+	color: #ebebeb;
+	font-size: 2vh;
+}
+@media only screen and (max-width: 600px) {
+ #login-box {
+	width:55vh;
+	height:68vh;
+	padding: 5vh 7vh 0 7vh;
+	color: white;
+	font: 2vh Arial, Helvetica, sans-serif;
+	margin-top: -10vh;
+	margin-left: -20vh;
+	background: url(../images/login-box-backg.jpg) no-repeat left top;
+}
+#captcha_id
+{
+	width: 20vh;
+	height: 8vh; 
+}
+}

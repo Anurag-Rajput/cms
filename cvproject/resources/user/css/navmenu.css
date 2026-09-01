@@ -1,0 +1,83 @@
+
+/* advanced styling version */
+* {
+  transition: background .5s;
+}
+
+ul {
+  font: 14px/14px Helvetica,Arial,sans-serif;
+  background: #87240F;
+  box-shadow: 0 3px 3px rgba(0,0,0,.5);
+}
+li {
+  position: relative;
+  display: inline-block;
+  list-style: none;
+}
+li a {
+  display: block;
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+  border-radius: 3px;
+}
+li a:hover {
+  color: white;
+  background: #71200f;
+}
+.top-level {
+  border-bottom: 1px solid #71200f;
+}
+.second-level,
+.third-level {
+  width: 150px;
+  border: 1px solid #71200f;
+  border-radius: 4px;
+}
+
+
+/*dropdown menu styles*/
+/*first level*/
+.top-level li:hover .second-level {
+  left: 0;
+}
+.second-level:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 15px;
+  border-bottom: 8px solid #71200f;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+.second-level {
+  position: absolute;
+  top: 100%;
+  left: -9999em;
+}
+.second-level li {
+  position: relative;
+  display: block;
+}
+.second-level li a {
+  margin: 0;
+}
+
+/*second level*/
+.second-level li:hover .third-level {
+  left: 100%;
+}
+.third-level:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -8px;
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+  border-right: 8px solid #71200f;
+}
+.third-level {
+  position: absolute;
+  left: -9999em;
+  top: 0;
+}
